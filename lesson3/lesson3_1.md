@@ -15,7 +15,7 @@ CREATE TABLE [IF NOT EXISTS] table_name (
 CREATE TABLE IF NOT EXISTS student (
    student_id SERIAL PRIMARY KEY,
    name VARCHAR(20) NOT NULL,
-   major varchar(20) UNIQUE
+   major varchar(20)
 );
 ```
 
