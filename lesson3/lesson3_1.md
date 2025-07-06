@@ -1,4 +1,4 @@
-## 建立資料表的語法
+## 建立資料表的語
 
 ```sql
 CREATE TABLE [IF NOT EXISTS] table_name (
