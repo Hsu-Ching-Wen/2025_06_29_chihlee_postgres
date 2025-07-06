@@ -78,7 +78,6 @@ WHERE student_id = 2;
 DELETE FROM student 
 WHERE student_id = 2;
 
-
 DELETE FROM student 
 WHERE student_id in (1,3,4);
 ```
