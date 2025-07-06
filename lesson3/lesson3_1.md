@@ -7,9 +7,9 @@ CREATE TABLE [IF NOT EXISTS] table_name (
    ...
    table_constraints
 );
-ˋˋˋ
+```
 
-## 建立一個studnet的資料表
+## 建立一個student的資料表
 
 ```sql
 CREATE TABLE IF NOT EXISTS student (
@@ -17,4 +17,4 @@ CREATE TABLE IF NOT EXISTS student (
    name VARCHAR(20) NOT NULL,
    major varchar(20) UNIQUE
 );
-ˋˋˋ
+```
