@@ -1,16 +1,11 @@
-import psycopg2
-from dotenv import load_dotenv
-import os
-import streamlit as st
 import datasource
-
-load_dotenv()
+import streamlit as st
 
 def main():
-    results = datasource.get_stations_names()
     st.title("台鐵車站名稱列表")
+    results = datasource.get_stations_names()
     if results:
-        st.table([[station] for station in results])
+        st.dataframe(results, width=400, height=600)
     else:
         st.error("無法取得車站資料")
 
