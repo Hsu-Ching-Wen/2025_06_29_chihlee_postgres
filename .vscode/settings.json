@@ -1,5 +1,10 @@
 {
-    "chat.mcp.discovery.enabled": false,
+    "chat.mcp.discovery.enabled": {
+        "claude-desktop": false,
+        "windsurf": false,
+        "cursor-global": false,
+        "cursor-workspace": false
+    },
     // --- Suggested Settings for better code quality ---
     // Automatically save files after a delay.
     "files.autoSave": "afterDelay",

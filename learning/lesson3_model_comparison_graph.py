@@ -24,6 +24,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
+from sklearn.ensemble import GradientBoostingClassifier
+from xgboost import XGBClassifier
 
 # --------- 1) 資料與前處理 ---------
 data = load_wine()
@@ -41,9 +43,26 @@ X_test_s  = scaler.transform(X_test)
 models = OrderedDict({
     "Logistic": LogisticRegression(max_iter=500),
     "KNN(k=5)": KNeighborsClassifier(n_neighbors=5),
+    "KNN (k=7)": KNeighborsClassifier(n_neighbors=7),
     "DecisionTree": DecisionTreeClassifier(random_state=42),
     "RandomForest": RandomForestClassifier(random_state=42),
-    "SVM(RBF)": SVC(kernel="rbf", probability=False)
+    # ✅ 新增 Gradient Boosting（提升樹模型）
+    "Gradient Boosting": GradientBoostingClassifier(random_state=42),
+    # ✅ 新增 XGBoost（常用穩健參數）
+    "XGBoost": XGBClassifier(
+    n_estimators=300,
+    max_depth=4,
+    learning_rate=0.1,
+    subsample=0.9,
+    colsample_bytree=0.9,
+    random_state=42,
+    n_jobs=-1,
+    eval_metric="mlogloss"
+    ),
+    "SVM(RBF)": SVC(kernel="rbf", probability=False),
+    # ✅ 新增 Linear SVM（線性核）
+    "SVM (Linear)": SVC(kernel='linear'),
+    #"Naive Bayes": GaussianNB()
 })
 
 def fit_predict(name, model):
